@@ -24,6 +24,16 @@ struct ContentView: View {
                     .keyboardType(field.keyBoardType)
             }
             .padding(.horizontal)
+            TextField("yyy", text: $userName)
+                .textFieldStyle(.roundedBorder)
+//                .border(.red)
+                .padding()
+                .onSubmit {
+                    print("yyy")
+                }
+                .onChange(of: userName) { //onChange in iOS 17
+                    print("\(userName)")
+                }
         }
     }
 }
